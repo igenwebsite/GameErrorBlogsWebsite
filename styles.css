@@ -1,0 +1,229 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color for contrast */
+    margin: 0;
+    padding: 0;
+}
+.lilita-one-regular {
+    font-family: "Lilita One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.greeny {
+    color: rgb(53, 240, 128);
+    display: inline;
+}
+
+.reddy{
+    color: rgb(230, 55, 98);
+    display: inline;
+}
+  
+
+/* Header styles */
+header {
+    background: linear-gradient(90deg, #1a1a1a 0%, #333333 100%); /* Dark gradient background */
+    color: #e4e4e4;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+
+/* Section styles */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem 1.5rem;
+}
+
+main {
+    background: rgb(18, 18, 18); /* Dark background for main section */
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #ff4081; /* Soft pink for titles */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff4081;
+    padding-bottom: 0.5rem;
+}
+
+main h3 {
+    color: #ff80ab; /* Slightly lighter pink for sub-headings */
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Custom box styles for major and minor bugs */
+.bug-box {
+    border: 2px solid #ff4081; /* Soft pink border for all bug boxes */
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #353434; /* Dark background for bug box */
+}
+
+.bug-box.major {
+    border-color: #f50057; /* Darker pink for major bugs */
+    background-color: #0c0c0c; /* Dark gray for major bug box */
+}
+
+.bug-box h4 {
+    margin-top: 0;
+    color: #e0e0e0; /* Light text color for headings */
+}
+
+.issue {
+    padding: 0.5rem;
+    background-color: #272932; /* Dark background for issues */
+    border-radius: 4px;
+    font-weight: bold;
+    color: #3872cf; /* Soft pink text for issue titles */
+    margin-bottom: 0.5rem;
+}
+
+.solution {
+    padding: 0.5rem;
+    background-color: #323f34; /* Slightly lighter gray background */
+    border-radius: 4px;
+    font-weight: bold;
+    color: #00e676; /* Bright green for solutions */
+    margin-bottom: 0.5rem;
+}
+
+/* New style for points box (lighter color box for bullet points) */
+.points-box {
+    padding: 0.5rem;
+    background-color: #1d1d1d; /* Dark background for points box */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Custom bullet list styles */
+main ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+main ul li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    color: #e0e0e0; /* Light text color for list items */
+}
+
+main ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ff4081; /* Soft pink color for bullet points */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Numbered list style */
+main ol {
+    counter-reset: list-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+main ol li {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+main ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ff4081; /* Soft pink for numbers */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Code block styles */
+code {
+    background-color: #333333; /* Dark background for code */
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 90%;
+    color: #ff4081; /* Soft pink color for code text */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(90deg, #ff4081, #f50057); /* Gradient from soft pink to darker pink */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.titly h4{
+    color: #f50057; /* Darker pink for title */
+    background-color: #2d2525; /* Dark background for titly */
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+
