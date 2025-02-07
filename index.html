@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find solutions to common S.T.A.L.K.E.R. 2 game issues, including crashes, bugs, and errors like Shader Warmup Failed, Out of Memory, and quest-specific problems. Troubleshooting made simple with detailed fixes and tips.">
+    <title>Comprehensive Fixes for S.T.A.L.K.E.R. 2 Issues – Game Crashes, Bugs, and More</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <div class="lilita-one-regular">
+                <img src="GAME_logo.png" alt="Game Repair Zone Logo" style="width: 180px; height:50px;" > 
+            </div>
+        </div>
+    </header>
+
+   
+    
+
+    <main class="container my-4">
+        <section>
+            <h1 class="text-primary">STALKER 2: Bugs and Fixes</h1>
+
+            <div id="major-bugs">
+                    <div class="image-container">
+            
+                        <img src="S.T.A.L.K.E.R - 2.jpg" alt="Game Issue Image" style="width:100%; height:auto;">
+                    </div>
+                <br>
+            </div>
+            
+
+            <!-- Major Bugs Section -->
+            <div id="major-bugs">
+                
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Error Code - 887A0006</h4>
+                    </div>
+                    <div class="issue">Issue: The game crashes constantly every few minutes.</div>
+                    <div class="solution">Solution:</div>
+                    
+                        <ul>
+                            <li>
+                                Download <a
+                                    href="https://www.nexusmods.com/site/mods/738?tab=files&file_id=3489">dlssg-to-fsr3-0.100
+                                    (Universal)-738-0-100-1720545036.zip</a>
+                            </li>
+                            <li>
+                                Place the content of the <strong>"dll_version"</strong> folder into:
+                                <p class="highlight-box">
+                                    <code>\S.T.A.L.K.E.R. 2- Heart of Chornobyl (Windows)\Content\Stalker2\Binaries\WinGDK</code>
+                                </p>
+                            </li>
+                            <li>
+                                Download <a
+                                    href="https://www.nexusmods.com/site/mods/738?tab=files&file_id=3487">dlssg-to-fsr3-0.100-738-0-100-1720544919.zip</a>
+                                and execute <code>DisableNvidiaSignatureChecks.reg</code> file. It is needed to allow
+                                the game to show the DLSS Frame Generation setting on 30XX cards.
+                            </li>
+                            <li>
+                                Run the game and select <strong>DLSS Frame Generation</strong>.
+                            </li>
+                            <li>
+                                <strong>Solved:</strong> Disabling GPU acceleration improves stability and provides an
+                                FPS gain of 5-6 FPS.
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.howtogeek.com/756935/how-to-enable-hardware-accelerated-gpu-scheduling-in-windows-11/">Enable
+                                    hardware-accelerated GPU scheduling</a>.
+                            </li>
+                        </ul>
+
+                    
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Out of Memory Error</h4>
+                    </div>
+                    <div class="issue">Issue: The game crashes due to insufficient memory usage.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Optimize Game Settings
+                            <p>- Open the <strong>NVIDIA GeForce Experience</strong> app.</p>
+                            <p>- Optimize the game to the lowest settings and save it.</p>
+                            <p>- This step might be optional, but it’s worth trying.</p>
+                        </li>
+                        <li>Edit Game Configuration
+                            <p>- Navigate to the following folder:</p>
+                            <p class="highlight-box">
+                                <code>C:\Users\YourUsername\AppData\Local\Stalker2\Saved\Config\WinGDK</code>
+                            </p>
+                            <p>- Replace <strong>YourUsername</strong> with your actual Windows username.</p>
+                            <p>- Alternatively:</p>
+                            <ul>
+                                <li>Click the Windows button and search for <code>%appdata%</code>.</li>
+                                <li>Press backspace, then go inside the folder named <strong>Local</strong> and follow the path above.</li>
+                            </ul>
+                            <p>- Locate the file <strong>GameUserSettings.ini</strong> and open it.</p>
+                            <p>- Find the line: <code>FrameRateLimit=</code></p>
+                            <p>- If the value is <code>0.000000</code>, change it to match your monitor's frame rate.</p>
+                            <p>- For example, if your monitor's refresh rate is <strong>144Hz</strong>, set it to:</p>
+                            <p class="highlight-box"><code>FrameRateLimit=144.000000</code></p>
+                        </li>
+                        <li>Adjust NVIDIA Control Panel Settings
+                            <p>- If the above steps don’t work, open the <strong>NVIDIA Control Panel</strong>.</p>
+                            <p>- Go to <strong>3D Settings</strong> and change the <strong>Shader Cache</strong> to <strong>Unlimited</strong>.</p>
+                            <p>- Start the game and complete the initial setup (accepting terms, setting brightness, etc.).</p>
+                            <p>- After the first launch, revert the <strong>Shader Cache</strong> setting to its previous value.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Low-Level Fatal Error / Exception Access Violation</h4>
+                    </div>
+                    <div class="issue">Issue: The game crashes with a "Low-Level Fatal Error" or "Exception
+                        Access Violation" error, preventing it from running.</div>
+                    <div class="solution">Solution:</div>
+                    
+                        <p>Many users have resolved this issue by using a performance mod from
+                            <strong>NexusMods</strong>.
+                            The mod helps optimize the game and get it working properly.
+                        </p>
+
+                        <h3><strong>Steps to Fix:</strong></h3>
+                        <ul>
+                            <li>Download a performance mod from <strong>NexusMods</strong>.</li>
+                            <li>Extract and install it according to the mod’s instructions.</li>
+                            <li>Restart your PC and launch the game.</li>
+                        </ul>
+
+                        <h3><strong>Recommended Performance Mods:</strong></h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.nexusmods.com/stalker2heartofchornobyl/mods/7" target="_blank">
+                                    Performance Mod for AMD Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.nexusmods.com/stalker2heartofchornobyl/mods/29" target="_blank">
+                                    General Performance Fix
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p><strong>Additional Notes:</strong> After installing the mod, compiling shaders might
+                            take longer,
+                            but the game should run successfully.</p>
+                    
+
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Game Doesn’t Save Anymore</h4>
+                    </div>
+                    <div class="issue">Issue: Players report an inability to save the game after entering the X5 area.
+                        Manual saves are disabled, and autosaves fail with a "couldn't save" message. This problem is
+                        linked to a missing cutscene with a mutant mind controller due to a script not triggering.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Reload a Previous Save
+                            <p>- Start from a save before using the keycard on the X5 door.</p>
+                        </li>
+                        <li>Disable Cheats
+                            <p>- If you’re using invisibility or similar cheats, turn them off to allow the mutant
+                                cutscene to trigger.</p>
+                        </li>
+                        <li>Force the Cutscene to Play
+                            <p>- Trigger the event by re-entering the area or approaching specific zones within X5.</p>
+                        </li>
+                        <li>Complete the Quest in One Session
+                            <p>- If saves remain disabled, finish the X5 sequence to restore functionality. It will wipe
+                                the script causing the problem.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Resolving Dalin Bug in "Down Below" Mission</h4>
+                    </div>
+                    <div class="issue">
+                        <strong>Issue Explained:</strong>
+                        In the "Down Below" mission for the Ward faction, Dalin teleports to Malachite after the
+                        cutscene, leaving players unable to complete the task as the door locks behind them.
+                    </div>
+                    <div class="solution">Solution:</div>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Install UETools Mod
+                            <p>- Installing UETools can resolve the issue automatically.</p>
+                        </li>
+                        <li>Use Console Command
+                            <p>- Utilize <code>XTeleportNPCToPlayer ProfessorDalin</code> to bring Dalin to your
+                                location.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Degtyarev Dialogue Bug in "Road to the Foundation"</h4>
+                    </div>
+                    <div class="issue">
+                        <strong>Issue Explained:</strong>
+                        In the "Road to the Foundation" mission, players may encounter a bug where Degtyarev doesn't
+                        initiate dialogue, preventing mission progression.
+                    </div>
+                    <div class="solution">Solution:</div>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Trigger Initial Dialogue
+                            <p>- Use the console command
+                                <code>XStartQuestNodeBySID E14_MQ01_SetDialog_Dialog_Degotj</code>. This command
+                                directly starts the dialogue with Degtyarev by activating the necessary quest node,
+                                bypassing the in-game trigger failure.</p>
+                        </li>
+                        <li>Fix Item Recognition
+                            <p>- If Degtyarev doesn’t recognize retrieved quest items, use
+                                <code>XStartQuestNodeBySID E14_MQ02_Start</code>. This command progresses the quest to
+                                the next phase, ensuring the game acknowledges your progress.</p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Missing Richter in "Back to the Slag Heap" Mission</h4>
+                    </div>
+                    <div class="issue">
+                        <strong>Issue Explained:</strong>
+                        After the cutscene where Richter calls the player to talk, he may not appear at his intended
+                        location in the Slag Heap, making progression impossible.
+                    </div>
+                    <div class="solution">Solution:</div>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Check Alternate Locations
+                            <p>- Visit the Boathouse southeast of the Slag Heap. Richter may have relocated there due to
+                                a pathfinding glitch.</p>
+                        </li>
+                        <li>Reload Saves and Disable Autosaves
+                            <p>- Disable autosaves in the settings and reload an earlier save. Repeat the Ward gun
+                                puzzle cutscene to reset his pathing.</p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for "Game Won’t Start" After 1.0.3 Update</h4>
+                    </div>
+                    <div class="issue">
+                        <strong>Issue Explained:</strong>
+                        After the 1.0.3 update, some players experience crashes or failures to launch with the error
+                        <code>EXCEPTION_ACCESS_VIOLATION</code>.
+                    </div>
+                    <div class="solution">Solution:</div>
+                    <strong>Solutions:</strong>
+                    <ul>
+                        <li>Reinstall Visual C++ Redistributable
+                            <p>- Reinstall VC_redist to restore missing dependencies that could cause the game to crash.
+                            </p>
+                        </li>
+                        <li>Verifying Integrity in Steam
+                            <p>- Right click on game in Steam Library, go to Properties.
+                                - Go to Installed Files, click on 'Verify integrity of game files' button.
+                                - It will find corrupted files, which Steam should automatically re-download. After this
+                                the game will start with no issues.</p>
+                        </li>
+                        <li>Check for Windows Updates
+                            <p>- Ensure Windows is up to date to avoid compatibility issues introduced by recent system
+                                updates.</p>
+                        </li>
+                        <li>Start a New Game and Load Past Save
+                            <p>- If the game doesn’t start, try creating a new game and then loading your previous save.
+                                This can help bypass crashes when starting directly.</p>
+                        </li>
+                        <li>Reinstall the Game
+                            <p>- Uninstall and reinstall the game, especially if you're using Game Pass, to reset
+                                corrupt installations.</p>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Persistent Hallucinations in <br>
+                            "S.T.A.L.K.E.R. 2: Heart of Chornobyl"</h4>
+                    </div>
+                    <div class="issue">Issue: Some players experience persistent hallucinations, including distorted
+                        audio and ghost figures, that can't be removed using psi blockers or vodka.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Load a Previous Save
+                            <p>- If possible, load a save from before the hallucinations started. This allows you to
+                                deal with the cause (e.g., a psi anomaly) before it becomes persistent.</p>
+                        </li>
+                        <li>Use a Mod to Remove Psi Radiation
+                            <p>- Install the mod <a
+                                    href="https://www.nexusmods.com/stalker2heartofchornobyl/mods/244?tab=description&%3Bfile_id=1028">here</a>.
+                                After installing, load the game, sleep to save, then uninstall the mod and reload. This
+                                should remove the persistent psi effects causing the hallucinations.</p>
+                            <ol>
+                                <li>Download the mod (download the file 'Disable Psy Radiation').</li>
+                                <li>Installation:
+                                    <p>Drop the .pak file in: <code>\Program Files
+                                        (x86)\Steam\steamapps\common\<br>S.T.A.L.K.E.R. 2 Heart of
+                                        Chornobyl\Stalker2\Content\<br>Paks\~mods\</code></p>
+                                    <p>If you don't have the ~mods folder, just create it and drop the mod file there.
+                                    </p>
+                                </li>
+                                <li>Load your game (the psy effect will be gone if the mod is installed correctly).</li>
+                                <li>Sleep in game.</li>
+                                <li>Make a new save after sleeping.</li>
+                                <li>Quit the game.</li>
+                                <li>Uninstall the mod.</li>
+                                <li>Start the game and load the save that you made with the mod after sleeping.</li>
+                            </ol>
+                            <p>Also, if you still cannot sleep in-game, you can download and install the file 'Sleep
+                                Bypass Only,' but you will need to keep this mod to sleep in-game, at least until the
+                                developers solve the issue<a
+                                    href="https://www.nexusmods.com/stalker2heartofchornobyl/mods/244?tab=description&%3Bfile_id=1028"> here.</a>
+                            </p>
+
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Missing Diode in Main Quest</h4>
+                    </div>
+                    <div class="issue">Issue: Players may encounter a problem where Diode is missing from his shop during the main quest, preventing them from progressing. Even after reloading the game or traveling, Diode does not appear.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Talk to the Ward Commander
+                            <p>- Head to the Ward Commander and speak to them. This action will prompt Diode to reappear, allowing you to continue the main quest.</p>
+                        </li>
+                        <li>Ensure Access to Shop
+                            <p>- If Diode is still missing after talking to the Ward Commander, ensure that you have full access to his shop area, as sometimes limited access may cause issues.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for High Memory Usage Leading to Crashes Near Rostok</h4>
+                    </div>
+                    <div class="issue">Issue: Players report a memory usage spike near Rostok, causing crashes due to the game consuming nearly all available RAM, even with no background programs running.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Check for Background Processes
+                            <p>- Double-check that no hidden processes or background applications are consuming RAM. Even with no obvious apps open, certain system processes may still use memory.</p>
+                        </li>
+                        <li>Lower NPC Count or Graphical Settings
+                            <p>- Decrease the number of NPCs or reduce graphical settings to ease memory usage, particularly in memory-heavy areas like Rostok.</p>
+                        </li>
+                        <li>Increase Virtual Memory
+                            <p>- Adjust virtual memory settings to allow Windows to use more hard drive space as additional memory when RAM runs out, preventing crashes.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Prof Lodochka Quest Bug "Like in the Good Old Days"</h4>
+                    </div>
+                    <div class="issue">Issue: In the "Like in the Good Old Days" quest, players face a bug where Prof Lodochka's door is locked, and the "open" button is greyed out, preventing interaction. The door latch is also inaccessible even when attempting to parkour.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Use UETools for Noclip
+                            <p>- Download and install the UETools mod from Nexus.</p>
+                            <p>- After installation, run the game and open the console by pressing the tilde key (~).</p>
+                            <p>- Use the <code>XNoClip</code> command to pass through the door, bypassing the locked door issue.</p>
+                            <p>- Once inside, you can continue the quest.</p>
+                        </li>
+                        <li>Wait for a Patch
+                            <p>- As some players report, waiting for an official patch may resolve this issue if the mod approach doesn't work or isn't preferred.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Shader Warmup Failed Error in S.T.A.L.K.E.R. 2</h4>
+                    </div>
+                    <div class="issue">Issue: Players encounter the "Shader Warmup Failed" error, which prevents them from starting the game. This issue often occurs even with a high-performance system.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Delete Shader Cache Folder
+                            <p>- Navigate to your game’s installation directory: <code>Steam/steamapps/shadercache/1643320</code>.</p>
+                            <p>- Delete the contents of the <code>shadercache</code> folder.</p>
+                            <p>- This action will clear corrupted shader data and can resolve the issue.</p>
+                        </li>
+                        <li>Verify Game Files
+                            <p>- Open Steam and right-click on S.T.A.L.K.E.R. 2 in your library.</p>
+                            <p>- Go to <code> Local Files > Verify Integrity of Game Files</code></p>
+                            <p>- This will check for missing or corrupted files and fix them.</p>
+                        </li>
+                        <li>Clear DirectX Cache
+                            <p>- Use Disk Cleanup to clear DirectX caches, which may interfere with game performance.</p>
+                        </li>
+                        <li>Restart Windows and Focus Window
+                            <p>- Try restarting Windows and focus on the game window after clicking “X” or “OK” on the error pop-up.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Emission Crash Error (EXCEPTION_ACCESS<br>_VIOLATION)</h4>
+                    </div>
+                    <div class="issue">Issue: Players face the <code>EXCEPTION_ACCESS_VIOLATION</code> crash during emissions in S.T.A.L.K.E.R. 2. This error happens during the 4th or 5th emission and is typically caused by the game attempting to access an invalid memory address during the emission damage phase.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Avoid Interacting with the Bolt Artifact
+                            <p>- The crash often occurs when interacting with the Bolt artifact from the Tornado anomaly. If you’ve already interacted with it, try to avoid it in future playthroughs.</p>
+                        </li>
+                        <li>Modding Solution
+                            <p>- Use the <a href="https://www.nexusmods.com/stalker2heartofchornobyl/mods/94/">Emission Crash Helper mod</a> to mitigate crashes related to emissions. After installing, launch the game and let the mod handle error fixes.</p>
+                        </li>
+                        <li>Reinstall Shaders
+                            <p>- Shader corruption can trigger crashes. To fix this, reinstall shaders by deleting the shader cache in the game directory. After that, let the game recompile shaders on the next launch. This will ensure the game uses the correct shader files and prevent crashes.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bug-box major">
+                    <div class="titly">
+                        <h4>Fix for Game Crash After Few Minutes (Unresponsive Task Manager Issue)</h4>
+                    </div>
+                    <div class="issue">Issue: Players experience a crash after a few minutes of gameplay. The game freezes, and the task manager shows the game as unresponsive. This issue began after a recent patch.</div>
+                    <div class="solution">Solution:</div>
+                    <ul>
+                        <li>Run File Integrity Check
+                            <p>- Open Steam, go to your game library, right-click S.T.A.L.K.E.R. 2, and select Properties.</p>
+                            <p>- In the Local Files tab, click "Verify Integrity of Game Files".</p>
+                            <p>- This ensures no missing or corrupted files, which may be causing the issue.</p>
+                        </li>
+                        <li>Use an Older Save
+                            <p>- Load a previous save from before the patch. This workaround has helped other players resolve the crash, especially when in areas with NPCs and inventory cleaning.</p>
+                        </li>
+                        <li>Add Command Line Argument
+                            <p>- In Steam, right-click on S.T.A.L.K.E.R. 2, go to <code>Properties > General > Set Launch Options </code></p>
+                            <p>- Add <code>-no_staging</code> to the launch options and then close the window.</p>
+                            <p>- This bypasses staging features that may cause memory leaks, allowing for stable gameplay for up to 30 minutes in problem areas like Rostok.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+                <!-- Additional bug entries will follow the same structure -->
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 Game Repair Zone. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
